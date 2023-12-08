@@ -1,8 +1,5 @@
 import sys
-<<<<<<< HEAD
-=======
 
->>>>>>> d6559178eb1a6e267c7d68048ce8abe5c90b1a6e
 sys.path.append("../")
 import utils
 
@@ -10,32 +7,6 @@ answer = 0
 
 lines = utils.get_lines_input("input.txt")
 
-<<<<<<< HEAD
-superiority = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
-
-for line in lines:
-    hand, rank = line.split(' ')
-
-    indieces = []
-
-    for letter in hand:
-        indieces.append(superiority.index(letter))
-
-    p = []
-    for i in indieces:
-        if i not in p:
-            p.append(i)
-    k = []
-    for j in p:
-        k.append(indieces.count(j))
-    
-    
-    
-    print("="*60)
-
-    
-    
-=======
 superiority = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"]
 
 fives = set()  # AAAAA
@@ -76,4 +47,3 @@ for line in lines:
         highs.add((hand, rank))
 
     print(custom_sort(fives))
->>>>>>> d6559178eb1a6e267c7d68048ce8abe5c90b1a6e
