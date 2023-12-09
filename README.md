@@ -13,15 +13,17 @@
 | 2   | 00:45:18 | 9628  | 00:58:01 | 9781  |
 | 1   | 00:15:22 | 6950  |          |       |
 
-Total stars: 6*
+Total stars: 8*
+
+## Day 9
+A good solid for day 9. Part 2 was only a slight refactor the way I wrote it. 
 
 ## Day 8
 Spent about 2 hours trying to get my code to run in the first place, doesn't work.
 
 ## Day 7
-Figured out the first part of the problem, sorting the 
-hands based on type of hand, but couldn't
-figure out how to sort within each hand.
+Figured out the first part of the problem, sorting the hands based on type of hand,
+but couldn't figure out how to sort within each hand.
 
 ## Day 6
 Easiest one in a bit. Just took a while to comprehend 

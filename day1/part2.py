@@ -1,4 +1,6 @@
-# Couldn't get part 2.
+class Found(Exception):
+    pass
+
 
 with open("input.txt", "r") as f:
     a = f.readlines()
@@ -17,7 +19,7 @@ numbers_words = {
     "nine": 9,
 }
 
-reversed_numbers_words = {
+reversed_numbers = {
     "eno": 1,
     "owt": 2,
     "eerht": 3,
@@ -30,40 +32,46 @@ reversed_numbers_words = {
 }
 
 answer = 0
-number_names = numbers_words.keys()
 
 for word in words:
-    imp = []
-    holder = ""
+    print("=" * 30)
+    evalulator = ""
+    leftmost = ""
+    rightmost = ""
 
-    for letter in word:
-        for name in number_names:
-            if name in holder:
-                imp.append(name)
-                holder = ""
+    try:
+        for character in word:
+            evalulator += character
+            if character.isdigit():
+                leftmost = character
+                print(leftmost)
+                raise Found
 
-        holder += letter
+            for number in numbers_words.keys():
+                if number in evalulator:
+                    leftmost = numbers_words.get(number)
+                    print(leftmost)
+                    raise Found
 
-    if imp:
-        word = word.replace(imp[0], str(numbers_words.get(imp[0]))).replace(
-            imp[-1], str(numbers_words.get(imp[-1]))
-        )
+    except Found:
+        evalulator = ""
+        for character in word[::-1]:
+            if character.isdigit():
+                rightmost = character
+                print(rightmost)
+                break
+            evalulator += character
 
-    print(word)
-
-    first_digit = 0
-    last_digit = 0
-    for i in word:
-        if i.isdigit():
-            first_digit = int(i)
+            for number in reversed_numbers.keys():
+                if number in evalulator:
+                    rightmost = reversed_numbers.get(number)
+                    print(rightmost)
+                    break
+            else:
+                continue
             break
-    for j in word[::-1]:
-        if j.isdigit():
-            last_digit = int(j)
-            break
 
-    n = str(first_digit) + str(last_digit)
-    n = int(n)
+    N = str(leftmost) + str(rightmost)
+    answer += int(N)
 
-    answer += n
 print(answer)

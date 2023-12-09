@@ -20,7 +20,22 @@ highs = set()  # A0123
 
 def custom_sort(old_list):
     hands = [i[0] for i in old_list]
-    return sorted(hands, key=lambda word: [superiority.index(c) for c in word])
+
+    bubbleSort(hands)
+    print(hands)
+
+
+def bubbleSort(arr):
+    n = len(arr)
+    swapped = False
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            if superiority.index(arr[j]) < superiority.index(arr[j + 1]):
+                swapped = True
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+        if not swapped:
+            return
 
 
 for line in lines:
@@ -46,4 +61,4 @@ for line in lines:
     elif config == "11111":  # A0123
         highs.add((hand, rank))
 
-    print(custom_sort(fives))
+    custom_sort(fives)
