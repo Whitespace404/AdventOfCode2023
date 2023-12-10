@@ -35,40 +35,40 @@ answer = 0
 
 for word in words:
     print("=" * 30)
-    evalulator = ""
+    evaluator = ""
     leftmost = ""
     rightmost = ""
 
     try:
         for character in word:
-            evalulator += character
+            evaluator += character
             if character.isdigit():
                 leftmost = character
                 print(leftmost)
                 raise Found
 
             for number in numbers_words.keys():
-                if number in evalulator:
+                if number in evaluator:
                     leftmost = numbers_words.get(number)
                     print(leftmost)
                     raise Found
 
     except Found:
-        evalulator = ""
+        evaluator = ""
         for character in word[::-1]:
             if character.isdigit():
                 rightmost = character
                 print(rightmost)
                 break
-            evalulator += character
+            evaluator += character
 
             for number in reversed_numbers.keys():
-                if number in evalulator:
+                if number in evaluator:
                     rightmost = reversed_numbers.get(number)
                     print(rightmost)
                     break
             else:
-                continue
+                continue  # only real use of continue anywhere tbh lol
             break
 
     N = str(leftmost) + str(rightmost)

@@ -5,34 +5,37 @@ ans = 0
 
 for line in lines:
     differences_matrix = []
-    travers = []
-    running = True
 
     terms = [int(p) for p in line.split()]
     differences_matrix.append(terms)
-    it = terms.copy()
 
-    while running:
-        this = []
+    while True:
+        current_row_differences = []
+
         for i in range(len(terms) - 1):
-            dif = terms[i + 1] - terms[i]
-            this.append(dif)
-        differences_matrix.append(this)
+            difference_between_terms = terms[i + 1] - terms[i]
+            current_row_differences.append(difference_between_terms)
 
-        if this.count(0) == len(this):
-            running = False
+        differences_matrix.append(current_row_differences)
 
-        terms = this
+        if current_row_differences.count(0) == len(current_row_differences):
+            break
 
-    travers = list(reversed(differences_matrix))
+        terms = current_row_differences
 
-    travers[0].append(0)
+    differences_matrix.reverse()
+    differences_matrix[0].append(0)
 
-    for R in range(len(travers) - 1):  # 0 1
-        x = travers[R + 1]
-        travers[R + 1].append(x[-1] + travers[R][-1])
+    for current_row_index in range(len(differences_matrix) - 1):
+        row_above = differences_matrix[current_row_index + 1]
 
-    ans += travers[-1][-1]
+        # Calculate the extrapolation by adding the last element of the next row with the last element of this row
+        extrapolation = row_above[-1] + differences_matrix[current_row_index][-1]
+
+        # Adding the extrapolation to the end of the list of the next list in our matrix
+        differences_matrix[current_row_index + 1].append(extrapolation)
+
+    ans += differences_matrix[-1][-1]
 
 
 print(ans)

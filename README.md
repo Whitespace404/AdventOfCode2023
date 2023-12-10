@@ -1,22 +1,28 @@
 # My attempt at [Advent of Code 2023]("https://adventofcode.com/2023")
 
 
-| Day | Part 1   | Rank  | Part 2   | Rank  |
-| --- | -------- | ----- | -------- | ----- |
-| 9   | 00:58:39 | 8736  | 01:10:32 | 8711  |
-| 8   |          |       |          |       |
-| 7   |          |       |          |       |
-| 6   | 04:56:44 | 31398 | 07:22:01 | 37239 |
-| 5   |          |       |          |       |
-| 4   | 11:42:46 | 63634 |          |       |
-| 3   |          |       |          |       |
-| 2   | 00:45:18 | 9628  | 00:58:01 | 9781  |
-| 1   | 00:15:22 | 6950  |          |       |
+| Day | Part 1   | Rank  | Part 2   | Rank   |
+| --- | -------- | ----- | -------- | ------ |
+| 10  |          |       |          |        |
+| 9   | 00:58:39 | 8736  | 01:10:32 | 8711   |
+| 8   |          |       |          |        |
+| 7   |          |       |          |        |
+| 6   | 04:56:44 | 31398 | 07:22:01 | 37239  |
+| 5   |          |       |          |        |
+| 4   | 11:42:46 | 63634 |          |        |
+| 3   |          |       |          |        |
+| 2   | 00:45:18 | 9628  | 00:58:01 | 9781   |
+| 1   | 00:15:22 | 6950  | >24h     | 194903 |
 
-Total stars: 8*
+Total stars: 9*
+
+## Day 10
+Well I'm not good enough to write a path-finding algorithm (yet) 
 
 ## Day 9
-A good solid for day 9. Part 2 was only a slight refactor the way I wrote it. 
+A good solid for day 9. Glad part 2 was only a slight refactor since I 
+was expecting something way worse. Not complaining though, I'll take the
+double star
 
 ## Day 8
 Spent about 2 hours trying to get my code to run in the first place, doesn't work.
@@ -55,3 +61,7 @@ the 'leaderboard', I'm missing an edge case on P2, and
 choked out of nervousness in P1. In retrospect, achieving a
 position on the leaderboard for P1 appears achievable
 with better execution. 
+
+Day 9 update: Finished Part 2 finally. An absolute bodge
+of a solution, but it taught me how to break twice inside a 
+nested for loop
