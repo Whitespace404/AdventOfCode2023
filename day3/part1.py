@@ -1,42 +1,26 @@
-# half baked spagetti code
-# there's got to be a better way to do this which i dont see unfortunately
-
 import sys
 
 sys.path.append("../")
 
 import utils
+import pprint
 
 lines = utils.get_lines_input("input.txt")
 
 answer = 0
 
-for line in range(len(lines)):
-    digits = []
-    digit_holder = ""
+symbols_locations = []
 
-    for character in range(len(lines[line])):
-        x = lines[line][character]
-        if x != "." and not x.isdigit():
-            print(x, "triggered")
-            surrounding_chars = []
-            try:
-                surrounding_chars = [
-                    lines[line - 1][character - 1],
-                    lines[line - 1][character],
-                    lines[line - 1][character + 1],
-                    lines[line][character - 1],
-                    lines[line][character + 1],
-                    lines[line + 1][character - 1],
-                    lines[line + 1][character],
-                    lines[line + 1][character + 1],
-                ]
-            except:
-                pass
+for i in range(len(lines)):
+    for j in range(len(lines[0])):
+        if not lines[i][j].isdigit() and lines[i][j] != ".":
+            symbols_locations.append((i, j))
 
-            for s in surrounding_chars:
-                if s.isdigit():
-                    pass
+numbers_with_locations = []
 
-            print(surrounding_chars)
-            quit()
+for i in range(len(lines)):
+    for j in range(len(lines[0])):
+        if lines[i][j].isdigit():
+            numbers_with_locations.append((lines[i][j], (i, j)))
+
+pprint.pprint(numbers_with_locations, indent=4)
