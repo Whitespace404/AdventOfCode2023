@@ -7,8 +7,6 @@ import pprint
 
 lines = utils.get_lines_input("input.txt")
 
-answer = 0
-
 symbols_locations = []
 
 for i in range(len(lines)):
