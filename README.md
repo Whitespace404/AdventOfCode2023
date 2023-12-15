@@ -15,6 +15,7 @@
 
 | Day | Part 1   | Rank   | Part 2   | Rank     |
 | --- | -------- | ------ | -------- | -------- |
+| 15  | 06:36:56 | 20584  |          |          |
 | 14  |          |        |          |          |
 | 13  |          |        |          |          |
 | 12  |          |        |          |          |
@@ -31,6 +32,11 @@
 | 1   | 00:15:22 | 6,950  | >24h     | 1,94,903 |
 
 Total stars: 9*
+
+## Day 15
+Managed to bag a star in the suspiciously easy part 1. I seem to be 
+missing something in the comprehension for part 2, since it works for the 
+sample input, but not on the actual input
 
 ## Day 10
 Well I'm not good enough to write a path-finding algorithm (yet) 
