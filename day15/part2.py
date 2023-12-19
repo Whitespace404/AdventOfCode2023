@@ -25,19 +25,21 @@ for word in words:
     if delimeter == "=":
         if lenses is not None:
             for slot_number in range(len(lenses) - 1):
-                if lenses[slot_number][0] == label:
+                if boxes_by_lenses[box_number][slot_number][0] == label:
                     boxes_by_lenses[box_number][slot_number] = [label, focal_length]
                     break
             else:
                 boxes_by_lenses[box_number].append([label, focal_length])
         else:
             boxes_by_lenses[box_number] = [[label, focal_length]]
-    elif delimeter == "-":
+
+    if delimeter == "-":
         if lenses is not None:
             for slot_number in range(len(lenses)):
                 if boxes_by_lenses[box_number][slot_number][0] == label:
                     boxes_by_lenses[box_number].pop(slot_number)
                     break
+
 
 ans = 0
 for box in boxes_by_lenses:
